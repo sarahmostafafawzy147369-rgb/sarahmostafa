@@ -1,0 +1,43 @@
+﻿<Window x:Class="Assment__Sarahmostafa.DoctorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Assment__Sarahmostafa"
+        mc:Ignorable="d"
+        Title="DoctorWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Label Height="30" Content="AppoientMentID"/>
+            <TextBox
+                x:Name="Id"
+                Width="100" Height="30" Margin="0,0,30,0"/>
+            <Label Content="Status" Height="30" Margin="0,0,10,0" />
+            <ComboBox 
+                x:Name="cmb_doctor"
+                Width="100" Height="30" Margin="0,0,100,0" />
+            <Button Content="Save" Width="60" Height="30" Click="Button_Click"/>
+        </StackPanel>
+        <DataGrid 
+            AutoGenerateColumns="False"
+            IsReadOnly="True"
+            x:Name="dg_doctor"
+            Grid.Row="1" SelectionChanged="dg_doctor_SelectionChanged">
+            <DataGrid.Columns>
+
+                <DataGridTextColumn Header="AppoientmentID" Binding="{Binding PID }"/>
+                <DataGridTextColumn Header="Patient Name" Binding="{Binding PName }"/>
+                <DataGridTextColumn Header="Patient phone" Binding="{Binding PPhone}"/>
+                <DataGridTextColumn Header="Patient Age" Binding="{Binding PAge}"/>
+                <DataGridTextColumn Header="Patient Notes" Binding="{Binding pnote}"/>
+                <DataGridTextColumn Header="Appoientment Reason" Binding="{Binding Apreseaon}"/>
+                <DataGridTextColumn Header="Appoientment Date" Binding="{Binding appDate }"/>
+                <DataGridTextColumn Header="status" Binding="{Binding status }"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
